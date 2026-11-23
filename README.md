@@ -11,7 +11,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/platform-Windows%20x64-2b7cff" alt="platform">
-  <img src="https://img.shields.io/badge/version-1.0.6-2b7cff" alt="version">
+  <img src="https://img.shields.io/badge/version-1.0.7-2b7cff" alt="version">
   <img src="https://img.shields.io/badge/Electron-28-47848F" alt="electron">
   <img src="https://img.shields.io/badge/license-personal%20use%20only-lightgrey" alt="license">
 </p>
@@ -24,16 +24,16 @@
 
 | 版本 | 适用场景 | 大小 | 下载 |
 | :--- | :--- | :--- | :--- |
-| **安装版** v1.0.6 | 常规使用，自动创建桌面与开始菜单快捷方式，可从"应用和功能"正常卸载 | 73.9 MB | [FeiNiuYingShi-PC-1.0.6-setup.exe](https://github.com/zuodila/FNtv-pc-windows/releases/download/v1.0.6/FeiNiuYingShi-PC-1.0.6-setup.exe) |
-| **绿色版** v1.0.6 | 免安装、不写注册表，解压后双击 `fntv.exe` 即用，适合放 U 盘 | 105.1 MB | [FeiNiuYingShi-PC-1.0.6-portable.zip](https://github.com/zuodila/FNtv-pc-windows/releases/download/v1.0.6/FeiNiuYingShi-PC-1.0.6-portable.zip) |
+| **安装版** v1.0.7 | 常规使用，自动创建桌面与开始菜单快捷方式，可从"应用和功能"正常卸载 | 75.8 MB | [FeiNiuYingShi-PC-1.0.7-setup.exe](https://github.com/zuodila/FNtv-pc-windows/releases/download/v1.0.7/FeiNiuYingShi-PC-1.0.7-setup.exe) |
+| **绿色版** v1.0.7 | 免安装、不写注册表，解压后双击 `fntv.exe` 即用，适合放 U 盘 | 102.6 MB | [FeiNiuYingShi-PC-1.0.7-portable.zip](https://github.com/zuodila/FNtv-pc-windows/releases/download/v1.0.7/FeiNiuYingShi-PC-1.0.7-portable.zip) |
 
 **系统要求**：Windows 10 / 11 x64
 
 **校验值**（下载后可用 `certutil -hashfile 文件名 SHA256` 核对）：
 
 ```
-setup.exe      a7314abe1a70332c6347291ff12813dc664705d0d85bcdef28476ff51ada84d4
-portable.zip   97122de7738c488c54dbf8e20ddbf46c4d694852d63433bb4fbfbf585140f79e
+setup.exe      194c8c1dcd267c036396e14ee0af0da81c75a9bfa1d2f88302f3bbb1cc87bace
+portable.zip   158cc5eef2d7617377cc6c86b1102030b3d4d09cf472416da1f25bdf26910917
 ```
 
 > 请只从本仓库 Releases 下载。第三方渠道转载的版本未经确认，安全性与完整性无法保证。
