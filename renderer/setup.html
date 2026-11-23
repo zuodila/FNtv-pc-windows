@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>连接你的飞牛 NAS - 飞牛影视</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --blue:#2b7cff; --blue-d:#1a5fe0; --blue-l:#eaf2ff;
+    --ink:#1b2430; --sub:#6b7684; --line:#dfe6f0; --bg:#f4f7fc;
+  }
+  html,body{height:100%;}
+  body{
+    font-family:"Microsoft YaHei","PingFang SC",-apple-system,sans-serif;
+    background:linear-gradient(150deg,#eef4ff 0%,#f7f9fd 45%,#eaf1ff 100%);
+    color:var(--ink); display:flex; align-items:center; justify-content:center;
+    min-height:100vh; overflow:hidden;
+  }
+  .glow{position:fixed;border-radius:50%;filter:blur(80px);opacity:.35;pointer-events:none;}
+  .g1{width:420px;height:420px;background:#7fb2ff;top:-120px;left:-100px;}
+  .g2{width:380px;height:380px;background:#9fd8ff;bottom:-140px;right:-80px;}
+  .card{
+    position:relative; z-index:2; width:520px; max-width:92vw;
+    background:#fff; border-radius:22px; padding:44px 46px 38px;
+    box-shadow:0 24px 70px rgba(41,98,190,.16),0 2px 8px rgba(0,0,0,.04);
+  }
+  .brand{display:flex;flex-direction:column;align-items:center;margin-bottom:30px;}
+  .logo{width:88px;height:88px;border-radius:22px;box-shadow:0 10px 26px rgba(43,124,255,.32);}
+  .title{font-size:24px;font-weight:700;margin-top:16px;letter-spacing:.5px;}
+  .desc{font-size:13px;color:var(--sub);margin-top:8px;text-align:center;line-height:1.7;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:13px;font-weight:600;color:#3c4756;margin-bottom:8px;}
+  .input-wrap{position:relative;}
+  .input-wrap input{
+    width:100%;height:50px;border:1.5px solid var(--line);border-radius:12px;
+    padding:0 16px;font-size:15px;color:var(--ink);outline:none;transition:.2s;
+    background:#fbfcfe;
+  }
+  .input-wrap input:focus{border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(43,124,255,.10);}
+  .hint{font-size:12px;color:#98a3b2;margin-top:7px;line-height:1.6;}
+  .hint code{background:#f0f4fa;padding:1px 6px;border-radius:5px;color:#5a6b82;font-family:Consolas,monospace;}
+  .row{display:flex;align-items:center;justify-content:space-between;margin:6px 0 22px;}
+  .check{display:flex;align-items:center;gap:9px;font-size:13px;color:#4a5563;cursor:pointer;user-select:none;}
+  .check input{width:17px;height:17px;accent-color:var(--blue);cursor:pointer;}
+  .btn{
+    width:100%;height:50px;border:none;border-radius:12px;cursor:pointer;
+    background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff;
+    font-size:16px;font-weight:600;letter-spacing:1px;transition:.2s;
+    box-shadow:0 8px 20px rgba(43,124,255,.3);
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 12px 26px rgba(43,124,255,.38);}
+  .btn:active{transform:translateY(0);}
+  .btn:disabled{opacity:.6;cursor:wait;transform:none;}
+  .history{margin-top:24px;border-top:1px solid #eef2f7;padding-top:18px;display:none;}
+  .history.show{display:block;}
+  .history h4{font-size:12px;color:#96a1b0;font-weight:600;margin-bottom:10px;}
+  .hitem{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:9px 12px;border-radius:9px;cursor:pointer;transition:.15s;
+  }
+  .hitem:hover{background:var(--blue-l);}
+  .hitem .addr{font-size:13px;color:#39465a;font-family:Consolas,monospace;}
+  .hitem .dot{width:7px;height:7px;border-radius:50%;background:#34c759;margin-right:8px;display:inline-block;}
+  .footer{text-align:center;font-size:11px;color:#aab4c2;margin-top:22px;line-height:1.7;}
+  .toast{
+    position:fixed;top:22px;left:50%;transform:translateX(-50%);z-index:9;
+    background:#fff;color:#c0392b;padding:10px 20px;border-radius:10px;font-size:13px;
+    box-shadow:0 8px 24px rgba(0,0,0,.12);display:none;
+  }
+</style>
+</head>
+<body>
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="toast" id="toast"></div>
+  <div class="card">
+    <div class="brand">
+      <img class="logo" src="logo.png" alt="飞牛影视">
+      <div class="title">飞牛影视</div>
+      <div class="desc">连接你自己的飞牛 NAS，开始观看</div>
+    </div>
+
+    <div class="field">
+      <label for="server">服务器地址</label>
+      <div class="input-wrap">
+        <input id="server" type="text" placeholder="例如 192.168.1.5 或 https://media.example.com:8443" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="hint">填写你的飞牛 NAS 地址。局域网填内网 IP，外网填域名或公网地址，可带端口。<br><code>客户端不存储任何 Fixed 服务器，账号与影片均直连你填写的设备。</code></div>
+    </div>
+
+    <div class="row">
+      <label class="check"><input type="checkbox" id="ignoreCert"> 忽略 HTTPS 证书错误（自签证书时勾选）</label>
+    </div>
+
+    <button class="btn" id="go">连接并进入影视</button>
+
+    <div class="history" id="history">
+      <h4>最近连接</h4>
+      <div id="hlist"></div>
+    </div>
+
+    <div class="footer">飞牛影视通用桌面客户端 · 每个用户连接自己的服务器，互不影响<br><span style="display:inline-block;margin-top:6px;opacity:.85;">作者：东哥</span></div>
+  </div>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const serverInput = $('server'), goBtn = $('go'), toast = $('toast');
+
+  function showToast(msg){
+    toast.textContent = msg; toast.style.display='block';
+    clearTimeout(showToast._t); showToast._t=setTimeout(()=>toast.style.display='none',2600);
+  }
+
+  async function init(){
+    let state = {};
+    try { state = await window.fntvAPI.getState(); } catch(e){}
+    // 绝不预填上次地址：这是通用客户端，打开时必须由使用者主动填写/选择自己的 NAS
+    serverInput.value = '';
+    if(state.ignoreCert) $('ignoreCert').checked = false;
+    renderHistory(state.history||[]);
+    setTimeout(()=>serverInput.focus(),100);
+  }
+
+  function renderHistory(list){
+    if(!list.length){ $('history').classList.remove('show'); return; }
+    $('history').classList.add('show');
+    $('hlist').innerHTML = list.map(h =>
+      '<div class="hitem" data-addr="'+escapeAttr(h)+'"><span><span class="dot"></span><span class="addr">'+escapeHtml(h)+'</span></span><span style="font-size:12px;color:#aab4c2;">连接 ›</span></div>'
+    ).join('');
+    document.querySelectorAll('.hitem').forEach(el=>{
+      el.addEventListener('click',()=>{ serverInput.value = el.dataset.addr; serverInput.focus(); });
+    });
+  }
+  function escapeHtml(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+  function escapeAttr(s){return escapeHtml(s).replace(/"/g,'&quot;');}
+
+  async function doConnect(){
+    const val = serverInput.value.trim();
+    if(!val){ showToast('请先填写你的飞牛 NAS 地址'); serverInput.focus(); return; }
+    goBtn.disabled=true; goBtn.textContent='正在连接…';
+    try{
+      const r = await window.fntvAPI.connect({ serverUrl:val, ignoreCert:$('ignoreCert').checked });
+      if(!r.ok){ showToast(r.error||'连接失败'); goBtn.disabled=false; goBtn.textContent='连接并进入影视'; }
+    }catch(e){ showToast('连接出错：'+e.message); goBtn.disabled=false; goBtn.textContent='连接并进入影视'; }
+  }
+
+  goBtn.addEventListener('click',doConnect);
+  serverInput.addEventListener('keydown',e=>{ if(e.key==='Enter') doConnect(); });
+
+  const params = new URLSearchParams(location.search);
+  if(params.get('msg')) showToast(params.get('msg'));
+  init();
+})();
+</script>
+</body>
+</html>
