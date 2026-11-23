@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>无法连接 - 飞牛影视</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f4f7fc;color:#1b2430;
+    display:flex;align-items:center;justify-content:center;min-height:100vh;}
+  .box{width:560px;max-width:92vw;background:#fff;border-radius:20px;padding:48px;text-align:center;
+    box-shadow:0 20px 60px rgba(41,98,190,.14);}
+  .logo{width:76px;height:76px;border-radius:18px;}
+  h1{font-size:21px;margin:20px 0 10px;}
+  p{font-size:14px;color:#6b7684;line-height:1.8;}
+  .url{font-family:Consolas,monospace;background:#f0f4fa;padding:3px 9px;border-radius:6px;color:#4a5a72;word-break:break-all;}
+  .code{font-size:12px;color:#aab4c2;margin-top:10px;}
+  .btns{display:flex;gap:12px;margin-top:28px;}
+  button{flex:1;height:46px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;border:none;}
+  .primary{background:linear-gradient(135deg,#2b7cff,#1a5fe0);color:#fff;}
+  .ghost{background:#eef3fb;color:#39506f;}
+</style>
+</head>
+<body>
+  <div class="box">
+    <img class="logo" src="logo.png" alt="飞牛影视">
+    <h1>暂时无法连接到影视服务器</h1>
+    <p>请确认你的飞牛 NAS 已开机、地址填写正确，<br>且该地址在当前网络下可以访问。</p>
+    <p class="url" id="url"></p>
+    <p class="code" id="code"></p>
+    <div class="btns">
+      <button class="ghost" id="change">更换服务器</button>
+      <button class="primary" id="retry">重试连接</button>
+    </div>
+  </div>
+<script>
+  const params = new URLSearchParams(location.search);
+  document.getElementById('url').textContent = params.get('url')||'';
+  const c = params.get('code');
+  document.getElementById('code').textContent = c ? ('错误代码：'+c) : '';
+  document.getElementById('retry').onclick = ()=>window.fntvAPI.retry();
+  document.getElementById('change').onclick = ()=>window.fntvAPI.disconnect();
+</script>
+</body>
+</html>
