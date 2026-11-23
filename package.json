@@ -1,0 +1,51 @@
+{
+  "name": "fntv-desktop",
+  "version": "1.0.6",
+  "description": "飞牛影视通用桌面客户端 - 连接你自己的飞牛 NAS",
+  "main": "main.js",
+  "author": "东哥",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64"
+  },
+  "build": {
+    "appId": "com.fntv.desktop",
+    "productName": "飞牛影视",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "ctrl_css.js",
+      "renderer/**/*",
+      "build/icon.png"
+    ],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "icon": "build/icon.ico",
+      "executableName": "fntv",
+      "artifactName": "飞牛影视PC端-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "飞牛影视",
+      "installerLanguages": ["zh_CN"],
+      "language": "2052"
+    },
+    "portable": {
+      "artifactName": "飞牛影视PC端-${version}-绿色版.${ext}"
+    }
+  },
+  "devDependencies": {
+    "electron": "28.3.3",
+    "electron-builder": "24.13.3"
+  }
+}
