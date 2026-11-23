@@ -22,10 +22,12 @@
 
 ## 下载
 
-| 版本 | 适用场景 | 大小 | 下载 |
-| :--- | :--- | :--- | :--- |
-| **安装版** v1.0.5 | 常规使用，自动创建桌面与开始菜单快捷方式，可从"应用和功能"正常卸载 | 73.9 MB | [FeiNiuYingShi-PC-1.0.5-setup.exe](../../releases/download/v1.0.5/FeiNiuYingShi-PC-1.0.5-setup.exe) |
-| **绿色版** v1.0.5 | 免安装、不写注册表，解压后双击 `fntv.exe` 即用，适合放 U 盘 | 105.1 MB | [FeiNiuYingShi-PC-1.0.5-portable.zip](../../releases/download/v1.0.5/FeiNiuYingShi-PC-1.0.5-portable.zip) |
+| 版本 | 适用场景 | 大小 | GitHub 下载 | 国内加速 |
+| :--- | :--- | :--- | :--- | :--- |
+| **安装版** v1.0.5 | 常规使用，自动创建桌面与开始菜单快捷方式，可从"应用和功能"正常卸载 | 73.9 MB | [FeiNiuYingShi-PC-1.0.5-setup.exe](https://github.com/zuodila/feiniu-tv-pc/releases/download/v1.0.5/FeiNiuYingShi-PC-1.0.5-setup.exe) | [NAS 直连](https://win.zuodila.top:28443/dl/pc/%E9%A3%9E%E7%89%9B%E5%BD%B1%E8%A7%86PC%E7%AB%AF-1.0.5-setup.exe) |
+| **绿色版** v1.0.5 | 免安装、不写注册表，解压后双击 `fntv.exe` 即用，适合放 U 盘 | 105.1 MB | [FeiNiuYingShi-PC-1.0.5-portable.zip](https://github.com/zuodila/feiniu-tv-pc/releases/download/v1.0.5/FeiNiuYingShi-PC-1.0.5-portable.zip) | [NAS 直连](https://win.zuodila.top:28443/dl/pc/%E9%A3%9E%E7%89%9B%E5%BD%B1%E8%A7%86PC%E7%AB%AF-1.0.5-%E7%BB%BF%E8%89%B2%E7%89%88.zip) |
+
+> GitHub 在部分网络环境下速度较慢，国内用户可优先使用「NAS 直连」。两个渠道的安装包完全相同。
 
 **系统要求**：Windows 10 / 11 x64
 
