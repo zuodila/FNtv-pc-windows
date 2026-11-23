@@ -2,7 +2,7 @@
   <img src="docs/banner.png" width="100%" alt="飞牛影视 PC 客户端">
 </div>
 
-<h1 align="center">飞牛影视 PC 客户端（Windows）</h1>
+<h1 align="center">飞牛影视 PC 客户端（Windows / macOS）</h1>
 
 <p align="center">
 把飞牛影视的网页版装进一个独立的桌面窗口 —— 补上窗口控制、系统托盘、多服务器管理这些桌面端该有的便利。<br>
@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/platform-Windows%20x64-2b7cff" alt="platform">
+  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS-2b7cff" alt="platform">
   <img src="https://img.shields.io/badge/version-1.0.7-2b7cff" alt="version">
   <img src="https://img.shields.io/badge/Electron-28-47848F" alt="electron">
   <img src="https://img.shields.io/badge/license-personal%20use%20only-lightgrey" alt="license">
@@ -26,14 +26,16 @@
 | :--- | :--- | :--- | :--- |
 | **安装版** v1.0.7 | 常规使用，自动创建桌面与开始菜单快捷方式，可从"应用和功能"正常卸载 | 75.8 MB | [FeiNiuYingShi-PC-1.0.7-setup.exe](https://github.com/zuodila/FNtv-pc-windows/releases/download/v1.0.7/FeiNiuYingShi-PC-1.0.7-setup.exe) |
 | **绿色版** v1.0.7 | 免安装、不写注册表，解压后双击 `fntv.exe` 即用，适合放 U 盘 | 102.6 MB | [FeiNiuYingShi-PC-1.0.7-portable.zip](https://github.com/zuodila/FNtv-pc-windows/releases/download/v1.0.7/FeiNiuYingShi-PC-1.0.7-portable.zip) |
+| **macOS 版** v1.0.7 | Intel 芯片（x64），解压后把 `飞牛影视.app` 拖进「应用程序」即用；未签名，首次打开见下方说明 | 94.7 MB | [FeiNiuYingShi-PC-1.0.7-macos-x64.zip](https://github.com/zuodila/FNtv-pc-windows/releases/download/v1.0.7/FeiNiuYingShi-PC-1.0.7-macos-x64.zip) |
 
-**系统要求**：Windows 10 / 11 x64
+**系统要求**：Windows 10 / 11 x64 · macOS 10.15+（Intel；Apple 芯片需经 Rosetta 2 运行）
 
-**校验值**（下载后可用 `certutil -hashfile 文件名 SHA256` 核对）：
+**校验值**（Windows 用 `certutil -hashfile 文件名 SHA256`，macOS 用 `shasum -a 256 文件名`）：
 
 ```
 setup.exe      194c8c1dcd267c036396e14ee0af0da81c75a9bfa1d2f88302f3bbb1cc87bace
 portable.zip   158cc5eef2d7617377cc6c86b1102030b3d4d09cf472416da1f25bdf26910917
+macos.zip      43f802514acdf556c4cc65457e814f95c5086c9f7abfa56a1e2197ecf84231ae
 ```
 
 > 请只从本仓库 Releases 下载。第三方渠道转载的版本未经确认，安全性与完整性无法保证。
@@ -74,7 +76,7 @@ portable.zip   158cc5eef2d7617377cc6c86b1102030b3d4d09cf472416da1f25bdf26910917
 
 ## 使用方法
 
-1. 下载**安装版**（推荐）或**绿色版**
+1. 下载**安装版**（推荐）、**绿色版**或 **macOS 版**
 2. 启动后在连接向导里填写你的 NAS 地址，例如
    - 局域网：`192.168.1.5:5666`
    - 外网：`https://media.example.com:8443`
@@ -107,9 +109,15 @@ portable.zip   158cc5eef2d7617377cc6c86b1102030b3d4d09cf472416da1f25bdf26910917
 </details>
 
 <details>
-<summary><b>能在 macOS / Linux 上用吗</b></summary>
+<summary><b>macOS 提示「无法打开，因为无法验证开发者」</b></summary>
 
-当前只构建了 Windows x64 版本。项目基于 Electron，理论上可自行在其它平台打包，但作者未做适配与测试。
+应用没有苹果签名（个人项目无开发者证书）。首次打开请右键点 `飞牛影视.app` →「打开」→ 再点一次「打开」；或在终端执行 `xattr -cr /Applications/飞牛影视.app`，之后即可正常双击启动。
+</details>
+
+<details>
+<summary><b>能在 Linux 上用吗</b></summary>
+
+目前构建了 Windows x64 与 macOS x64 两个版本，未做 Linux 适配。项目基于 Electron，理论上可自行打包，但作者未测试。
 </details>
 
 <details>
@@ -123,6 +131,7 @@ portable.zip   158cc5eef2d7617377cc6c86b1102030b3d4d09cf472416da1f25bdf26910917
 - Electron 28 + 原生 HTML/CSS（连接向导、错误页）
 - 主进程负责窗口、托盘、配置持久化、证书策略；页面通过 `contextBridge` 暴露的极小 API 与主进程通信
 - 安装包使用 Unicode 版 NSIS 3.11 编译，完整支持中文路径
+- macOS 版为 x64 未签名包（个人项目无苹果开发者证书），首次启动需手动放行
 - 不修改、不注入飞牛服务端；仅在远程页面上叠加桌面端所需的窗口控制条
 
 ## 源码
