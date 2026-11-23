@@ -1,4 +1,4 @@
-飞牛影视 PC 客户端 **v1.0.7**（Windows 10 / 11 x64）
+飞牛影视 PC 客户端 **v1.0.7**（Windows 10 / 11 x64 · macOS 10.15+ Intel）
 
 把飞牛影视网页版装进一个独立的桌面窗口 —— 不改动服务器、不内置任何地址，每个人连接自己的 NAS。
 
@@ -8,6 +8,7 @@
 
 - **移除页面署名注入逻辑**：删除了在影视页面品牌区叠加「作者：东哥」小字的整段代码（含轮询与 DOM 监听）。该逻辑在多数环境下并未生效，且会在官方页面上叠加第三方文字，容易让人误以为是官方标注，故彻底移除
 - **署名保留在自有界面**：连接向导页脚与「关于」窗口仍显示「作者：东哥」，不涉及任何官方页面
+- **新增 macOS 版**：同一套界面与托盘逻辑，Intel 芯片原生运行（Apple 芯片经 Rosetta 2），未签名，首次启动需右键「打开」或 `xattr -cr`
 - 其余功能与 v1.0.6 完全一致，升级无需重新配置
 
 ### 附件
@@ -16,6 +17,7 @@
 | :--- | :--- | :--- |
 | `FeiNiuYingShi-PC-1.0.7-setup.exe` | 安装版（推荐），中文安装向导，自动创建快捷方式，可正常卸载 | 75.8 MB |
 | `FeiNiuYingShi-PC-1.0.7-portable.zip` | 绿色版，解压后双击 `fntv.exe` 即用，不写注册表 | 102.6 MB |
+| `FeiNiuYingShi-PC-1.0.7-macos-x64.zip` | macOS 版（Intel x64），解压后把 `飞牛影视.app` 拖进「应用程序」 | 94.7 MB |
 
 ### 安装 / 使用
 
@@ -29,9 +31,10 @@
 ```
 194c8c1dcd267c036396e14ee0af0da81c75a9bfa1d2f88302f3bbb1cc87bace  FeiNiuYingShi-PC-1.0.7-setup.exe
 158cc5eef2d7617377cc6c86b1102030b3d4d09cf472416da1f25bdf26910917  FeiNiuYingShi-PC-1.0.7-portable.zip
+43f802514acdf556c4cc65457e814f95c5086c9f7abfa56a1e2197ecf84231ae  FeiNiuYingShi-PC-1.0.7-macos-x64.zip
 ```
 
-Windows 下核对：`certutil -hashfile 文件名 SHA256`
+Windows 下核对：`certutil -hashfile 文件名 SHA256`；macOS 用 `shasum -a 256 文件名`
 
 ### 常见问题
 
