@@ -47,4 +47,4 @@ Windows 下核对：`certutil -hashfile 文件名 SHA256`
 
 本项目为个人学习作品，**非飞牛官方产品**，与官方无任何隶属或授权关系。软件按「现状」提供，不作任何担保，使用风险自负；禁止商业销售、付费分发或冒充官方发布。界面中的商标与影片海报版权归各权利人所有，如有侵权请开 Issue，核实后立即删除。
 
-完整条款见仓库 [DISCLAIMER.md](https://github.com/OWNER/REPO/blob/main/DISCLAIMER.md)。
+完整条款见仓库 [DISCLAIMER.md](https://github.com/zuodila/feiniu-tv-pc/blob/main/DISCLAIMER.md)。
