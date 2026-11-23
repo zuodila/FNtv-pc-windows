@@ -1,4 +1,4 @@
-飞牛影视 PC 客户端 **v1.0.5**（Windows 10 / 11 x64）
+飞牛影视 PC 客户端 **v1.0.6**（Windows 10 / 11 x64）
 
 把飞牛影视网页版装进一个独立的桌面窗口 —— 不改动服务器、不内置任何地址，每个人连接自己的 NAS。
 
@@ -6,6 +6,7 @@
 
 ### 本版更新
 
+- **调整署名文案**：界面与关于页仅保留「作者：东哥」
 - **新增系统托盘**：点 ✕ 收进托盘后台运行（播放不中断）；单击托盘图标显示/隐藏窗口；右键菜单支持更换服务器、重新加载、关于、退出
 - **修复安装版中文乱码**：改用 Unicode 版 NSIS 编译，安装向导与中文路径全部正常
 - **修复安装后目标文件夹为空**：旧脚本卸载段命名错误，导致安装完立刻删除已解压文件
@@ -16,8 +17,8 @@
 
 | 文件 | 说明 | 大小 |
 | :--- | :--- | :--- |
-| `FeiNiuYingShi-PC-1.0.5-setup.exe` | 安装版（推荐），中文安装向导，自动创建快捷方式，可正常卸载 | 73.9 MB |
-| `FeiNiuYingShi-PC-1.0.5-portable.zip` | 绿色版，解压后双击 `fntv.exe` 即用，不写注册表 | 105.1 MB |
+| `FeiNiuYingShi-PC-1.0.6-setup.exe` | 安装版（推荐），中文安装向导，自动创建快捷方式，可正常卸载 | 73.9 MB |
+| `FeiNiuYingShi-PC-1.0.6-portable.zip` | 绿色版，解压后双击 `fntv.exe` 即用，不写注册表 | 105.1 MB |
 
 ### 安装 / 使用
 
@@ -29,8 +30,8 @@
 ### 校验值（SHA256）
 
 ```
-b98aad1e7448bcc85f66f60ca5b2d4fac39782fc41fd6d4a91ecebf1841bef73  FeiNiuYingShi-PC-1.0.5-setup.exe
-9b13b217dc6f7241c0014366e03bdc8409f978334e51168dabf88e780eda2631  FeiNiuYingShi-PC-1.0.5-portable.zip
+a7314abe1a70332c6347291ff12813dc664705d0d85bcdef28476ff51ada84d4  FeiNiuYingShi-PC-1.0.6-setup.exe
+97122de7738c488c54dbf8e20ddbf46c4d694852d63433bb4fbfbf585140f79e  FeiNiuYingShi-PC-1.0.6-portable.zip
 ```
 
 Windows 下核对：`certutil -hashfile 文件名 SHA256`
@@ -43,8 +44,8 @@ Windows 下核对：`certutil -hashfile 文件名 SHA256`
 
 ---
 
-**作者：东哥（基于飞牛官方套件修改转译）**
+**作者：东哥**
 
 本项目为个人学习作品，**非飞牛官方产品**，与官方无任何隶属或授权关系。软件按「现状」提供，不作任何担保，使用风险自负；禁止商业销售、付费分发或冒充官方发布。界面中的商标与影片海报版权归各权利人所有，如有侵权请开 Issue，核实后立即删除。
 
-完整条款见仓库 [DISCLAIMER.md](https://github.com/zuodila/feiniu-tv-pc/blob/main/DISCLAIMER.md)。
+完整条款见仓库 [DISCLAIMER.md](https://github.com/zuodila/FNtv-pc-windows/blob/main/DISCLAIMER.md)。
