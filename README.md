@@ -127,6 +127,40 @@ portable.zip   97122de7738c488c54dbf8e20ddbf46c4d694852d63433bb4fbfbf585140f79e
 - 安装包使用 Unicode 版 NSIS 3.11 编译，完整支持中文路径
 - 不修改、不注入飞牛服务端；仅在远程页面上叠加桌面端所需的窗口控制条
 
+## 源码
+
+源代码全部公开，可自行审计、编译。
+
+```
+main.js              主进程：窗口、托盘、配置持久化、证书策略、快捷键
+preload.js           预加载：contextBridge 暴露极小 API，叠加窗口控制条
+ctrl_css.js          窗口控制条样式
+renderer/setup.html  连接向导页
+renderer/error.html  错误页
+renderer/logo.png    应用图标
+package.json         依赖与 electron-builder 配置
+build/icon.png       打包用图标源文件
+```
+
+**编译**（需 Node.js 18+）：
+
+```bash
+npm install
+npm run dist          # 产出 dist/ 下的安装版与绿色版
+```
+
+只想本机运行调试：
+
+```bash
+npm start
+```
+
+配置写在 `%APPDATA%/fntv-desktop/config.json`，只存你填的服务器地址与窗口尺寸，不含任何账号信息，也不会回传。
+
+## 许可
+
+源码可见，但**禁止商业使用**：不得销售、付费分发、冒充官方发布。个人学习、研究、非商业修改与再分发需保留署名与许可。详见 [LICENSE](LICENSE)。
+
 ## 免责声明
 
 **本项目为个人学习与技术研究作品，非飞牛（fnOS）官方产品，与官方无任何隶属或授权关系。**
