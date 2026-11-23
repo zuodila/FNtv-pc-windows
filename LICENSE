@@ -1,0 +1,49 @@
+# 非商业源码许可协议
+
+**Non-Commercial Source License**
+
+版权所有 (c) 2026 东哥
+
+本项目（飞牛影视 PC 客户端，下称「本软件」）的源代码以公开可见的形式提供，目的是学习交流与安全审计。
+
+使用、复制或分发本软件源代码，即表示你已阅读并同意以下全部条款。
+
+---
+
+## 一、允许
+
+1. **个人学习与研究**：阅读、编译、在自己拥有的设备上运行本软件。
+2. **非商业性修改与再分发**：可以修改代码并在非商业场景下分享，但**必须保留本许可协议、原作者署名及免责声明**，并注明修改内容。
+3. **安全审计**：出于检查安全性、隐私性的目的审查源代码。
+
+## 二、禁止
+
+1. **任何形式的商业使用**，包括但不限于：销售本软件或其修改版、付费分发、内置于商业产品或付费服务中、以本软件直接获取商业收益。
+2. **冒充官方发布**，或声称本软件与飞牛（fnOS / 飞牛影视）官方存在隶属、合作、授权、背书关系。
+3. **移除或篡改**原作者署名、本许可协议与免责声明。
+4. **违法用途**，或将本软件用于侵犯他人合法权益的场景。
+
+## 三、免责
+
+本软件按「现状」（AS IS）提供，不附带任何明示或默示担保，包括但不限于适销性、特定用途适用性与非侵权担保。
+
+作者不对使用或无法使用本软件所造成的任何直接、间接、偶然、特殊或后果性损失承担责任。
+
+完整的免责条款见 [DISCLAIMER.md](DISCLAIMER.md)。
+
+## 四、终止
+
+违反上述任一条款，本许可即自动终止，你须立即停止使用并删除本软件的全部副本。
+
+---
+
+## English Summary
+
+This source code is published for learning, research, and security auditing only.
+
+- **Permitted**: personal use, study, non-commercial modification and redistribution (with this license, attribution, and disclaimer retained).
+- **Prohibited**: any commercial use, paid distribution, impersonating the official product, removing attribution, or any unlawful use.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. THE AUTHOR SHALL NOT BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM THE USE OF THE SOFTWARE.
+
+See [DISCLAIMER.md](DISCLAIMER.md) for the full disclaimer.
