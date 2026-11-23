@@ -1,6 +1,6 @@
 {
   "name": "fntv-desktop",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "飞牛影视通用桌面客户端 - 连接你自己的飞牛 NAS",
   "main": "main.js",
   "author": "东哥",
@@ -30,6 +30,14 @@
       "icon": "build/icon.ico",
       "executableName": "fntv",
       "artifactName": "飞牛影视PC端-${version}-${arch}.${ext}"
+    },
+    "mac": {
+      "target": [
+        { "target": "zip", "arch": ["x64"] }
+      ],
+      "icon": "build/icon.png",
+      "category": "public.app-category.video",
+      "artifactName": "飞牛影视PC端-${version}-macos-${arch}.${ext}"
     },
     "nsis": {
       "oneClick": false,
