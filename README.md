@@ -11,12 +11,12 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/platform-Windows%20x64-2b7cff" alt="platform">
-  <img src="https://img.shields.io/badge/version-1.0.5-2b7cff" alt="version">
+  <img src="https://img.shields.io/badge/version-1.0.6-2b7cff" alt="version">
   <img src="https://img.shields.io/badge/Electron-28-47848F" alt="electron">
   <img src="https://img.shields.io/badge/license-personal%20use%20only-lightgrey" alt="license">
 </p>
 
-> **作者：东哥（基于飞牛官方套件修改转译）** · 本项目为个人学习作品，非飞牛官方产品，详见 [免责声明](DISCLAIMER.md)
+> **作者：东哥** · 本项目为个人学习作品，与飞牛官方无任何关联，详见 [免责声明](DISCLAIMER.md)
 
 ---
 
@@ -24,8 +24,8 @@
 
 | 版本 | 适用场景 | 大小 | GitHub 下载 | 国内加速 |
 | :--- | :--- | :--- | :--- | :--- |
-| **安装版** v1.0.5 | 常规使用，自动创建桌面与开始菜单快捷方式，可从"应用和功能"正常卸载 | 73.9 MB | [FeiNiuYingShi-PC-1.0.5-setup.exe](https://github.com/zuodila/feiniu-tv-pc/releases/download/v1.0.5/FeiNiuYingShi-PC-1.0.5-setup.exe) | [NAS 直连](https://win.zuodila.top:28443/dl/pc/%E9%A3%9E%E7%89%9B%E5%BD%B1%E8%A7%86PC%E7%AB%AF-1.0.5-setup.exe) |
-| **绿色版** v1.0.5 | 免安装、不写注册表，解压后双击 `fntv.exe` 即用，适合放 U 盘 | 105.1 MB | [FeiNiuYingShi-PC-1.0.5-portable.zip](https://github.com/zuodila/feiniu-tv-pc/releases/download/v1.0.5/FeiNiuYingShi-PC-1.0.5-portable.zip) | [NAS 直连](https://win.zuodila.top:28443/dl/pc/%E9%A3%9E%E7%89%9B%E5%BD%B1%E8%A7%86PC%E7%AB%AF-1.0.5-%E7%BB%BF%E8%89%B2%E7%89%88.zip) |
+| **安装版** v1.0.6 | 常规使用，自动创建桌面与开始菜单快捷方式，可从"应用和功能"正常卸载 | 73.9 MB | [FeiNiuYingShi-PC-1.0.6-setup.exe](https://github.com/zuodila/FNtv-pc-windows/releases/download/v1.0.6/FeiNiuYingShi-PC-1.0.6-setup.exe) | [NAS 直连](https://win.zuodila.top:28443/dl/pc/%E9%A3%9E%E7%89%9B%E5%BD%B1%E8%A7%86PC%E7%AB%AF-1.0.6-setup.exe) |
+| **绿色版** v1.0.6 | 免安装、不写注册表，解压后双击 `fntv.exe` 即用，适合放 U 盘 | 105.1 MB | [FeiNiuYingShi-PC-1.0.6-portable.zip](https://github.com/zuodila/FNtv-pc-windows/releases/download/v1.0.6/FeiNiuYingShi-PC-1.0.6-portable.zip) | [NAS 直连](https://win.zuodila.top:28443/dl/pc/%E9%A3%9E%E7%89%9B%E5%BD%B1%E8%A7%86PC%E7%AB%AF-1.0.6-%E7%BB%BF%E8%89%B2%E7%89%88.zip) |
 
 > GitHub 在部分网络环境下速度较慢，国内用户可优先使用「NAS 直连」。两个渠道的安装包完全相同。
 
@@ -34,8 +34,8 @@
 **校验值**（下载后可用 `certutil -hashfile 文件名 SHA256` 核对）：
 
 ```
-setup.exe      b98aad1e7448bcc85f66f60ca5b2d4fac39782fc41fd6d4a91ecebf1841bef73
-portable.zip   9b13b217dc6f7241c0014366e03bdc8409f978334e51168dabf88e780eda2631
+setup.exe      a7314abe1a70332c6347291ff12813dc664705d0d85bcdef28476ff51ada84d4
+portable.zip   97122de7738c488c54dbf8e20ddbf46c4d694852d63433bb4fbfbf585140f79e
 ```
 
 > 请只从本仓库 Releases 下载。第三方渠道转载的版本未经确认，安全性与完整性无法保证。
